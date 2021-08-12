@@ -1,0 +1,40 @@
+
+ [
+    {
+        "id":1,
+        "hospitalName": "Krishna Multi Speciality Hospital",
+        "phone":"989768590",
+        "email":"krishna@gmail.com",
+        "location":"Bhimavaram",
+        "address":"sai ram nagar",
+        "bedsAvailable":24,
+        "ventilation":56,
+        "criticalCareUnit":34,
+        "isolationWard":32
+    },
+    {
+        "id":2,
+        "hospitalName": "Raghu Multi Speciality Hospital",
+        "phone":"989796456",
+        "email":"raghu@gmail.com",
+        "location":"Rajahmundry",
+        "address":"sai Datha nagar",
+        "bedsAvailable":24,
+        "ventilation":56,
+        "criticalCareUnit":45,
+        "isolationWard":32
+    },
+    {
+        "id":3,
+        "hospitalName": "Seshu Multi Speciality Hospital",
+        "phone":"630276839",
+        "email":"seshu@gmail.com",
+        "location":"Kakinada",
+        "address":"sai seshu nagar",
+        "bedsAvailable":24,
+        "ventilation":56,
+        "criticalCareUnit":20,
+        "isolationWard":32
+    }
+
+]
