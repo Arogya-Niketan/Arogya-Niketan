@@ -21,10 +21,10 @@ export class HospitalService{
         );
     }
 
-    getProduct(id: number): Observable<IHospital | undefined> {
+    getHospital(hospitalName: String): Observable<IHospital | undefined> {
         return this.getHospitals()
           .pipe(
-            map((hospitals: IHospital[]) => hospitals.find(h => h.id === id))
+            map((hospitals: IHospital[]) => hospitals.find(h => h.hospitalName === hospitalName))
           );
       }
 
