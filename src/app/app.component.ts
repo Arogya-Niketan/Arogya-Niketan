@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <a class='navbar-brand h1 text-white m-1 p-1' routerLinkActive='active' routerLink='/welcome'><img src="./assets/images/Screensh1.png" alt="" width="30" height="24" class="d-inline-block align-text-top ">{{pageTitle}}</a>
       <ul class='nav nav-pills'>
         <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/welcome'>Home</a></li>
-        <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/hospitals'>Hospital List</a></li>
+        <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/hospitalList'>Hospital List</a></li>
       </ul>
       </div>
   </nav>
