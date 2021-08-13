@@ -17,7 +17,7 @@ export class HospitalService{
     getHospitals(): Observable<IHospital[]> {
         return this.http.get<IHospital[]>(this.hospitalUrl).pipe(
             tap(data => console.log("All", JSON.stringify(data))),
-            //catchError(this.handleError)
+            catchError(this.handleError)
         );
     }
 
