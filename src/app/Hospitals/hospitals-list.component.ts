@@ -1,4 +1,5 @@
-import { Component, OnInit} from "@angular/core";
+import { Component, OnDestroy, OnInit} from "@angular/core";
+import { Subscription } from "rxjs";
 import { IHospital } from "./hospital";
 import { HospitalService } from "./hospital.service";
 
@@ -9,9 +10,10 @@ import { HospitalService } from "./hospital.service";
 
 
 
-export class HospitalsListComponent implements OnInit{
+export class HospitalsListComponent implements OnInit, OnDestroy{
     pageTitle: string = "Hospitals List";
     errorMessage = '';
+    sub!: Subscription;
     
     private _listFilter: string="";
     get listFilter(): string{
@@ -37,13 +39,17 @@ hospital.location.toLocaleLowerCase().includes(filterBy));
 
     
   ngOnInit(): void {
-    this.hospitalService.getHospitals().subscribe({
+    this.sub = this.hospitalService.getHospitals().subscribe({
       next: hospitals => {
         this.hospitals = hospitals;
         this.filteredHospitals = this.hospitals;
       },
       error: err => this.errorMessage = err
     });
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe();
   }
 
    /*  ngOnInit(): void {
