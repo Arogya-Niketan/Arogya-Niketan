@@ -4,7 +4,7 @@ import { IHospital } from "./hospital";
 import { HospitalService } from "./hospital.service";
 
 @Component({
-    selector: 'app-hospitals',
+    selector: 'app-hospitals-list',
     templateUrl: './hospitals-list.component.html'
 })
 

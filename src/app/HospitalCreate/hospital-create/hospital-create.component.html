@@ -1,0 +1,195 @@
+<div class="card">
+    <div class="card-header h4">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="saveHospital()"
+            [formGroup]="hospitalForm"
+            >
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="hospitalNameId">Hospital Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="hospitalNameId"
+                   type="text"
+                   placeholder="Name (required)"
+                   formControlName="hospitalName"
+                   [ngClass]="{'is-invalid': displayMessage.hospitalName }" />
+            <span class="invalid-feedback">
+              {{displayMessage.hospitalName}}
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="phoneId">Phone</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="phoneId"
+                   type="text"
+                   placeholder="Phone (required)"
+                   formControlName="phone"
+                   [ngClass]="{'is-invalid': displayMessage.phone}" />
+            <span class="invalid-feedback">
+              {{displayMessage.phone}}
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="emailId">Email</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="emailId"
+                     type="text"
+                     placeholder="Email (required)"
+                     formControlName="email"
+                     [ngClass]="{'is-invalid': displayMessage.email}" />
+              <span class="invalid-feedback">
+                {{displayMessage.email}}
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="locationId">Location</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="locationId"
+                     type="text"
+                     placeholder="Location (required)"
+                     formControlName="location"
+                     [ngClass]="{'is-invalid': displayMessage.location}" />
+              <span class="invalid-feedback">
+                {{displayMessage.location}}
+              </span>
+            </div>
+          </div>
+  
+  
+        
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="addressId">Address</label>
+  
+          <div class="col-md-8">
+            <textarea class="form-control"
+                      id="addressId"
+                      placeholder="Address"
+                      rows=5
+                      formControlName="address"
+                      [ngClass]="{'is-invalid': displayMessage.address}"></textarea>
+            <span class="invalid-feedback">
+              {{ displayMessage.address}}
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="bedsAvailableId">Beds Available</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="bedsAvailableId"
+                     type="text"
+                     placeholder="BedsAvailable (required)"
+                     formControlName="bedsAvailable"
+                     [ngClass]="{'is-invalid': displayMessage.bedsAvailable}" />
+              <span class="invalid-feedback">
+                {{displayMessage.bedsAvailable}}
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="ventilationId">Ventilation</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="ventilationId"
+                     type="text"
+                     placeholder="Ventilation (required)"
+                     formControlName="ventilation"
+                     [ngClass]="{'is-invalid': displayMessage.ventilation}" />
+              <span class="invalid-feedback">
+                {{displayMessage.ventilation}}
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="criticalCareUnitId">CriticalCare Unit</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="criticalCareUnitId"
+                     type="text"
+                     placeholder="CriticalCareUnit (required)"
+                     formControlName="criticalCareUnit"
+                     [ngClass]="{'is-invalid': displayMessage.criticalCareUnit}" />
+              <span class="invalid-feedback">
+                {{displayMessage.criticalCareUnit}}
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="isolationWardId">Isolation Ward</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="isolationWardId"
+                     type="text"
+                     placeholder="IsolationWard (required)"
+                     formControlName="isolationWard"
+                     [ngClass]="{'is-invalid': displayMessage.isolationWard}" />
+              <span class="invalid-feedback">
+                {{displayMessage.isolationWard}}
+              </span>
+            </div>
+          </div>
+          
+
+
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"
+                    style="width:80px;"
+                    type="submit"
+                    [title]="hospitalForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                    [disabled]="!hospitalForm.valid"
+                    >
+              Save
+            </button>
+            <button class="btn btn-outline-secondary mr-3"
+                    style="width:80px;"
+                    type="button"
+                    title="Cancel your edits"
+                     routerLink='/hospitalList'>
+              Cancel
+            </button>
+            <button class="btn btn-outline-warning"
+                    style="width:80px"
+                    type="button"
+                    title="Delete this hospital"
+                    (click)="deleteHospital()"
+                    >
+              Delete
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

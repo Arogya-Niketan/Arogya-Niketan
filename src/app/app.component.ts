@@ -10,6 +10,9 @@ import { Component } from '@angular/core';
       <ul class='nav nav-pills'>
         <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/welcome'>Home</a></li>
         <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/hospitalList'>Hospital List</a></li>
+        <li ><a class='nav-link text-white' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/hospitals/0/edit']">Add Hospital</a>
+  </li>
       </ul>
       </div>
   </nav>

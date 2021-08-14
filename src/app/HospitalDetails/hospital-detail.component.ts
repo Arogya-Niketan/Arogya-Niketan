@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IHospital } from '../Hospitals/hospital';
-import { HospitalService } from '../Hospitals/hospital.service';
+import { IHospital } from '../HospitalsList/hospital';
+import { HospitalService } from '../HospitalsList/hospital.service';
 
 @Component({
   //selector: 'app-hospital-detail',
@@ -20,15 +20,15 @@ export class HospitalDetailComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    const hospitalName = String(this.route.snapshot.paramMap.get("hospitalName"));
-    this.pageTitle += `${hospitalName}`;
-    if (hospitalName) {
-      this.getHospital(hospitalName);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.pageTitle += `${id}`;
+    if (id) {
+      this.getHospital(id);
     }
   }
 
-  getHospital(hospitalName: String): void {
-    this.hospitalService.getHospital(hospitalName).subscribe({
+  getHospital(id: number): void {
+    this.hospitalService.getHospital(id).subscribe({
       next: hospital => this.hospital = hospital,
       error: err => this.errorMessage = err
     });

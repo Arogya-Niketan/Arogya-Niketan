@@ -58,7 +58,7 @@
               className="btn btn-link"
               class="btn btn-outline-primary"
               style="width: 72px"
-              [routerLink]="['/hospitals', hospital.hospitalName]"
+              [routerLink]="['/hospitals', hospital.id]"
             >
               Detail
             </button>
@@ -72,17 +72,19 @@
                     [routerLink]="['/hospitals', hospital.hospitalName]"
                   /> -->
             /
-            <button class="btn btn-outline-dark" style="width: 55px">
+            <button class="btn btn-outline-dark" style="width: 55px" 
+            [routerLink]="['/hospitals', hospital.id, 'edit']">
               <i class="fa fa-chevron-left"></i> Edit
             </button>
-            /
+            <!-- /
             <button
               className="btn btn-link text-danger"
               class="btn btn-outline-danger"
               style="width: 72px"
+              onclick="deleteHospital()"
             >
               Delete
-            </button>
+            </button> -->
             <!-- <input
                     type="button"
                     value="Delete"
