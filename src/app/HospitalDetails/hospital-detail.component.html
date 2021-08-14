@@ -1,6 +1,19 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+  <div class="container-fluid bg-secondary">
+      <a class='navbar-brand h1 text-white m-1 p-1' routerLinkActive='active' routerLink='/welcome'><img src="./assets/images/Screensh1.png" alt="" width="30" height="24" class="d-inline-block align-text-top ">Arogya-Niketan</a>
+      <ul class='nav nav-pills'>
+        <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/welcome'>Home</a></li>
+        <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/hospitalList'>Hospital List</a></li>
+        <li ><a class='nav-link text-white' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/hospitals/0/edit']">Add Hospital</a>
+  </li>
+      </ul>
+      </div>
+  </nav>
+
 <div class="card">
-  <div class="card-header text-danger h4">
-    {{ pageTitle }}
+  <div class="card-header text-danger text-center h4">
+    {{ hospital.hospitalName }}
   </div>
 
   <!-- <div class="card-header" >
@@ -9,56 +22,56 @@
   <div class="card-body" *ngIf="hospital">
     <div class="row">
       <div class="col-md-8">
-       <!--  <div class="row">
+       <div class="row">
           <div class="col-md-4 text-secondary">Hospital Id :</div>
-          <div class="col-md-8">{{ hospital.id }}</div>
-        </div> -->
+          <div class="col-md-8 h6">{{ hospital.id }}</div>
+        </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Hospital Name :</div>
           <div class="col-md-8 text-danger h5">{{ hospital.hospitalName }}</div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Phone :</div>
-          <div class="col-md-8 text-danger">{{ hospital.phone }}</div>
+          <div class="col-md-8 text-danger h6">{{ hospital.phone }}</div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Email :</div>
-          <div class="col-md-8 text-danger">{{ hospital.email }}</div>
+          <div class="col-md-8 text-danger h6">{{ hospital.email }}</div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Location :</div>
-          <div class="col-md-8 bg-light text-primary">
+          <div class="col-md-8 text-primary h6">
             {{ hospital.location | uppercase }}
           </div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Address :</div>
-          <div class="col-md-8 bg-light text-primary">
+          <div class="col-md-8  text-primary h6">
             {{ hospital.address }}
           </div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Beds Available :</div>
-          <div class="col-md-8 text-danger">{{ hospital.bedsAvailable }}</div>
+          <div class="col-md-8 text-danger h6">{{ hospital.bedsAvailable }}</div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">Ventilation :</div>
-          <div class="col-md-8 text-danger">{{ hospital.ventilation }}</div>
+          <div class="col-md-8 text-danger h6">{{ hospital.ventilation }}</div>
         </div>
         <div class="row">
           <div class="col-md-4 text-secondary">CriticalCare Unit :</div>
-          <div class="col-md-8 text-danger">
+          <div class="col-md-8 text-danger h6">
             {{ hospital.criticalCareUnit }}
           </div>
         </div>
-        <div class="row">
+        <div class="row ">
           <div class="col-md-4 text-secondary">IsolationWard :</div>
-          <div class="col-md-8 text-danger">{{ hospital.isolationWard }}</div>
+          <div class="col-md-8 text-danger h6">{{ hospital.isolationWard }}</div>
         </div>
       </div>
     </div>
 
-    <div class="card-footer">
+    <div class="row m-4">
       <button
         class="btn btn-outline-dark"
         style="width: 80px"

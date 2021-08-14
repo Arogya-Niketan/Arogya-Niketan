@@ -7,20 +7,33 @@
     </div>
   </nav> -->
 
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+    <div class="container-fluid bg-secondary">
+        <a class='navbar-brand h1 text-white m-1 p-1' routerLinkActive='active' routerLink='/welcome'><img src="./assets/images/Screensh1.png" alt="" width="30" height="24" class="d-inline-block align-text-top ">Arogya-Niketan</a>
+        <ul class='nav nav-pills'>
+          <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/welcome'>Home</a></li>
+          <li><a class='nav-link text-white' routerLinkActive='active' routerLink='/hospitalList'>Hospital List</a></li>
+          <li ><a class='nav-link text-white' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/hospitals/0/edit']">Add Hospital</a>
+    </li>
+        </ul>
+        </div>
+    </nav>
+
 <div class="card">
   <div class="card-header h2 text-center">
     {{ pageTitle }}
   </div>
   <div class="card-body">
-    <div class="col-md-2 text-danger h6">Filter By Location:</div>
-    <div class="clo-md-4">
-      <input type="text" [(ngModel)]="listFilter" />
+    <div class="col-md-2 text-danger h6">Filter By Location: </div>
+    <div class="col-md-4">
+      <input type="text" placeholder="Enter Location (City)" [(ngModel)]="listFilter" />
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <h6 class="text-secondary">
-        Filtered By Location: {{ listFilter | uppercase }}
+    <div class="col-md-2">
+      <h6 class="text-secondary p-4">
+        Filtered By Location: {{ listFilter | uppercase}}
       </h6>
     </div>
   </div>
@@ -43,15 +56,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let hospital of filteredHospitals">
-          <td>{{ hospital.id }}</td>
+          <td class="h6">{{ hospital.id }}</td>
           <td class="h6">{{ hospital.hospitalName | uppercase }}</td>
-          <td>{{ hospital.phone }}</td>
-          <td>{{ hospital.email }}</td>
+          <td class="h6">{{ hospital.phone }}</td>
+          <td class="h6">{{ hospital.email }}</td>
           <td class="h6">{{ hospital.location }}</td>
-          <td class="text-danger">{{ hospital.bedsAvailable }}</td>
-          <td class="text-danger">{{ hospital.ventilation }}</td>
-          <td class="text-danger">{{ hospital.criticalCareUnit }}</td>
-          <td class="text-danger">{{ hospital.isolationWard }}</td>
+          <td class="text-danger h6">{{ hospital.bedsAvailable }}</td>
+          <td class="text-danger h6">{{ hospital.ventilation }}</td>
+          <td class="text-danger h6">{{ hospital.criticalCareUnit }}</td>
+          <td class="text-danger h6">{{ hospital.isolationWard }}</td>
           <td>
             <button
               style="width: 55px"
