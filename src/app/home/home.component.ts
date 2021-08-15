@@ -4,7 +4,12 @@ import { User } from '../_models';
 
 import { AccountService } from '../_services';
 
-@Component({ templateUrl: 'home.component.html' })
+@Component({ templateUrl: 'home.component.html',
+styleUrls: ["./home.component.css"]
+
+})
+
+
 export class HomeComponent {
     user: User;
 

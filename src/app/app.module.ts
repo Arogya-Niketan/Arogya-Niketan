@@ -16,6 +16,7 @@ import { HospitalCreateGuard } from './HospitalCreate/hospital-create.guard';
 import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { AlertComponent } from './_components';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AlertComponent } from './_components';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(HospitalData),
