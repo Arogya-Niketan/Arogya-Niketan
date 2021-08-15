@@ -4,9 +4,7 @@ import { IHospital } from '../HospitalsList/hospital';
 import { HospitalService } from '../HospitalsList/hospital.service';
 
 @Component({
-  //selector: 'app-hospital-detail',
   templateUrl: './userhospitaldetail.component.html',
-  
 })
 export class UserHospitalDetailComponent implements OnInit {
 
