@@ -17,11 +17,15 @@ import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helper
 import { HomeComponent } from './home';
 import { AlertComponent } from './_components';
 import { AppRoutingModule } from './app-routing.module';
+import { UserHospitalsListComponent } from './UserHospitalsList/userhospitalslist.component';
+import { UserHospitalDetailComponent } from './UserHospitalsList/userhospitaldetail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    UserHospitalsListComponent,
+    UserHospitalDetailComponent,
     HospitalsListComponent,
     HospitalDetailComponent,
     HospitalCreateComponent,

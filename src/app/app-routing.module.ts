@@ -6,6 +6,8 @@ import { HospitalCreateGuard } from './HospitalCreate/hospital-create.guard';
 import { HospitalCreateComponent } from './HospitalCreate/hospital-create/hospital-create.component';
 import { HospitalDetailComponent } from './HospitalDetails/hospital-detail.component';
 import { HospitalsListComponent } from './HospitalsList/hospitals-list.component';
+import { UserHospitalDetailComponent } from './UserHospitalsList/userhospitaldetail.component';
+import { UserHospitalsListComponent } from './UserHospitalsList/userhospitalslist.component';
 import { WelcomeComponent } from './Welcome/welcome.component';
 import { AuthGuard } from './_helpers';
 
@@ -16,7 +18,9 @@ const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
     { path: 'account', loadChildren: accountModule },
+    {path: 'userhospitalList', component: UserHospitalsListComponent},
     {path: "hospitalList", component: HospitalsListComponent },
+    {path: 'userhospitals/:id', component: UserHospitalDetailComponent},
     {path: "hospitals/:id", component: HospitalDetailComponent },
     {path: "welcome", component: WelcomeComponent },
    /*  {path: '', redirectTo: 'welcome', pathMatch: 'full' }, */

@@ -1,0 +1,87 @@
+<div class="card">
+    <div class="card-header h2 text-center">
+      {{ pageTitle }}
+    </div>
+    <div class="card-body">
+      <div class="col-md-2 text-danger h6">Filter By Location: </div>
+      <div class="col-md-4">
+        <input type="text" placeholder="Enter Location (City)" [(ngModel)]="listFilter" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <h6 class="text-secondary p-4">
+          Filtered By Location: {{ listFilter | uppercase}}
+        </h6>
+      </div>
+    </div>
+  
+    <div class="table-responsive p-2">
+      <table class="table" *ngIf="hospitals.length">
+        <thead class="text-primary">
+          <tr>
+            <th>Id</th>
+            <th>Hospital</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Beds Available</th>
+            <th>Ventilation</th>
+            <th>CriticalCare Unit</th>
+            <th>Isolation Ward</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hospital of filteredHospitals">
+            <td class="h6">{{ hospital.id }}</td>
+            <td class="h6">{{ hospital.hospitalName | uppercase }}</td>
+            <td class="h6">{{ hospital.phone }}</td>
+            <td class="h6">{{ hospital.email }}</td>
+            <td class="h6">{{ hospital.location }}</td>
+            <td class="text-danger h6">{{ hospital.bedsAvailable }}</td>
+            <td class="text-danger h6">{{ hospital.ventilation }}</td>
+            <td class="text-danger h6">{{ hospital.criticalCareUnit }}</td>
+            <td class="text-danger h6">{{ hospital.isolationWard }}</td>
+            <td>
+              <button
+                style="width: 55px"
+                className="btn btn-link"
+                class="btn btn-outline-primary"
+                style="width: 72px"
+                [routerLink]="['/userhospitals', hospital.id]"
+              >
+                Detail
+              </button>
+  
+              <!-- <input
+                      type="button"
+                      value="Detail"
+                      className="btn btn-link"
+                      class="btn btn-outline-primary"
+                      style='width:55px'
+                      [routerLink]="['/hospitals', hospital.hospitalName]"
+                    /> -->
+              
+              <!-- /
+              <button
+                className="btn btn-link text-danger"
+                class="btn btn-outline-danger"
+                style="width: 72px"
+                onclick="deleteHospital()"
+              >
+                Delete
+              </button> -->
+              <!-- <input
+                      type="button"
+                      value="Delete"
+                      className="btn btn-link text-danger "
+                      class="btn btn-outline-danger"
+                      style='width:60px'
+                    /> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
