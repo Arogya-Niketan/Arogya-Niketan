@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark " *ngIf="user">
      <div class="navbar-nav ">
-
-        <a class="navbar-brand" href="/">
+        
+        <a class="navbar-brand" href="/" style="color: bisque">
             <img src="./assets/images/Screensh1.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Welcome - {{user.username | uppercase}}
           </a>
         
          <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-         <!-- <a class='nav-link text-white' routerLinkActive='active' routerLink='/welcome'>Home</a> -->
  <a class=' nav-item nav-link ' routerLinkActive='active' routerLink='/hospitalList'>Hospital List</a>
  <a class=' nav-item nav-link ' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
  [routerLink]="['/hospitals/0/edit']">Add Hospital</a>
