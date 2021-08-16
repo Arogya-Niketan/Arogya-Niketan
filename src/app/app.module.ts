@@ -42,18 +42,7 @@ import { UserHospitalDetailComponent } from './UserHospitalsList/userhospitaldet
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(HospitalData),
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: "hospitalList", component: HospitalsListComponent },
-      {path: "hospitals/:id", component: HospitalDetailComponent },
-      {path: "welcome", component: WelcomeComponent },
-     /*  {path: '', redirectTo: 'welcome', pathMatch: 'full' }, */
-     /*  {path: "**", redirectTo: "welcome", pathMatch: "full" }, */ 
-      {
-        path: 'hospitals/:id/edit',
-        canDeactivate: [HospitalCreateGuard],
-        component: HospitalCreateComponent
-      }
-    ]) 
+    RouterModule.forRoot([ ]) 
     ],
 
 
