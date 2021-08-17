@@ -52,8 +52,5 @@ hospital.location.toLocaleLowerCase().includes(filterBy));
     this.sub.unsubscribe();
   }
 
-   /*  ngOnInit(): void {
-        console.log("In OnInit");
-    }
- */
+   
 }

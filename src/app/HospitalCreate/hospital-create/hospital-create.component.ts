@@ -175,9 +175,9 @@ export class HospitalCreateComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   onSaveComplete(): void {
-    // Reset the form to clear the flags
     this.hospitalForm.reset();
-    this.router.navigate(['/hospitalsList']);
+   this.router.navigate(['/hospitalsList']);
+    
   }
 
  
